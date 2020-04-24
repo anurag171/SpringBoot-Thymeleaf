@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Country Data Profile</title>
+<style type="text/css">
+label {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+
+input[type=text], input[type=password], select {
+	display: inline-block;
+	width: 200px;
+}
+
+input[type=radio] {
+	margin-left: 45px;
+}
+
+input[type=checkbox] {
+	margin-right: 190px;
+}
+
+button {
+	padding: 5px;
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>Country Data Profile</h1>
+		<a href="/new">Create new country data</a> <br />
+		<br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Country Code</th>
+					<th>Country Name</th>
+					<th>Country ZoneId</th>
+					<th>Country Time Zone</th>
+					<th>Country Time Zone OffSet</th>
+					<th>Country Today StartTime</th>
+					<th>Country Today EndTime</th>
+					<th>Country Next Business Date</th>
+					<th>Country Is Business Date Today</th>
+					<th>Country Throttling Amount</th>
+					<th>Country Throttling Currency</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="country : ${countryList}">
+					<td th:text="${country.code}">Country Code</td>
+					<td th:text="${country.name}">Country Name</td>
+					<td th:text="${country.zoneId}">Country ZoneId</td>
+					<td th:text="${country.zone}">Country Time Zone</td>
+					<td th:text="${country.zoneOffSet}">Country Time Zone Offset</td>
+					<td th:text="${country.startDateTime}">Country Today StartTime</td>
+					<td th:text="${country.endDateTime}">Country Today EndTime</td>
+					<td th:text="${country.nextBusinessDate}">Country Next Business Date</td>
+					<td th:text="${country.isBusinessDate}">Country Is Business Date Today</td>
+					<td th:text="${country.throttlingAmount}">Country Throttling Amount</td>
+					<td th:text="${country.currency}">Country Throttling Currency</td>
+					<td><a th:href="@{'/edit/' + ${country.code}}">Edit</a>
+						&nbsp;&nbsp;&nbsp; <a th:href="@{'/delete/' + ${country.code}}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

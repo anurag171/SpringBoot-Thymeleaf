@@ -1,0 +1,43 @@
+[
+	{
+		"code": "SG",
+		"name":"Singapore",
+		"zoneId": "Asia/Singapore",
+		"zone":"SGT",
+		"zoneOffSet":"UTC+08:00",
+		"timeZone":"SGT",
+		"startDateTime": "2020-04-21T16:30:00",
+		"endDateTime": "2020-04-22T16:30:00",
+		"nextBusinessDate":"2020-04-23T16:30:00",
+		"isBusinessDate":"Y",
+		"throttlingAmount": "500000",
+		"currency": "SGD"			
+	},
+	{
+		"code": "TH",
+		"name":"Thailand",
+		"zoneId": "Asia/Bangkok",
+		"zone":"THA",
+		"zoneOffSet":"UTC+07:00",
+		"timeZone":"SGT",
+		"startDateTime": "2020-04-21T16:30:00",
+		"endDateTime": "2020-04-22T16:30:00",
+		"nextBusinessDate":"2020-04-23T16:30:00",
+		"isBusinessDate":"Y",
+		"throttlingAmount": "500000",
+		"currency": "THB"
+	},
+	{
+		"code": "ID",
+		"name":"Indonesia",
+		"zoneId": "Asia/Jakarta",
+		"zone":"IDC",
+		"zoneOffSet":"UTC+08:00",
+		"startDateTime": "2020-04-21T16:30:00",
+		"endDateTime": "2020-04-22T16:30:00",
+		"nextBusinessDate":"2020-04-23T16:30:00",
+		"isBusinessDate":"Y",
+		"throttlingAmount": "500000",
+		"currency": "IDR"
+	}
+]
