@@ -1,9 +1,14 @@
 package com.anurag.spring.countrydata;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.util.StringUtils;
 
 @Document(collection = "countrystaticdata")
 public class CountryStaticData {
@@ -80,7 +85,10 @@ public class CountryStaticData {
 	 * @param startDateTime the startDateTime to set
 	 */
 	public void setStartDateTime(String startDateTime) {
-		this.startDateTime = startDateTime;
+		if(!StringUtils.isEmpty(startDateTime))
+			this.startDateTime = startDateTime;
+		else
+			this.startDateTime=DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now(ZoneId.systemDefault()));
 	}
 	/**
 	 * @return the endDateTime
@@ -92,7 +100,11 @@ public class CountryStaticData {
 	 * @param endDateTime the endDateTime to set
 	 */
 	public void setEndDateTime(String endDateTime) {
-		this.endDateTime = endDateTime;
+		if(!StringUtils.isEmpty(endDateTime))
+			this.endDateTime = endDateTime;
+		else
+			this.endDateTime=DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now(ZoneId.systemDefault()));
+		
 	}
 	/**
 	 * @return the nextBusinessDate
@@ -104,7 +116,10 @@ public class CountryStaticData {
 	 * @param nextBusinessDate the nextBusinessDate to set
 	 */
 	public void setNextBusinessDate(String nextBusinessDate) {
-		this.nextBusinessDate = nextBusinessDate;
+		if(!StringUtils.isEmpty(nextBusinessDate))
+			this.nextBusinessDate = nextBusinessDate;
+		else
+			this.nextBusinessDate=DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now(ZoneId.systemDefault()).plusDays(1));
 	}
 	/**
 	 * @return the isBusinessDate

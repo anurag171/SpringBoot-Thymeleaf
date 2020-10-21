@@ -25,10 +25,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-@Controller
+
 public class CountryDataController {
 	
-	@Value(value = "classpath:/data.json")
+	/*@Value(value = "classpath:/data.json")
 	String preloadFilePath;
 	
 	@Autowired
@@ -42,6 +42,8 @@ public class CountryDataController {
 	@GetMapping("/country_form")
 	public String showForm(Model model) throws IOException {
 		List<CountryStaticData> countryList = null;
+		countryList = service.getAll();
+		isJsonDataLoaded = (null!=countryList && countryList.isEmpty())?false:true;
 		if(!isJsonDataLoaded) {			
 			countryList = new ArrayList<>();
 			StringBuilder contentBuilder = new StringBuilder();
@@ -55,8 +57,6 @@ public class CountryDataController {
 				e.printStackTrace();
 			}
 			isJsonDataLoaded = true;
-		}else {
-			countryList = service.getAll();
 		}
 		model.addAttribute("countryList", countryList);		
 		return "country_form";
@@ -96,5 +96,5 @@ public class CountryDataController {
 	public String deleteCountryData(@PathVariable(name = "code") String code) {
 	    service.delete(code);
 	    return "redirect:/";       
-	}
+	}*/
 }
